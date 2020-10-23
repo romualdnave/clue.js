@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Mystery } from "./board/mystery";
 import { prompt } from './board/inquirer';
 
