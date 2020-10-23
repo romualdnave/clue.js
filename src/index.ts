@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { Mystery } from "./board/mystery";
-import { prompt } from './board/inquirer';
+import { Mystery } from "./game/mystery";
+import { prompter } from './prompter';
 
 const mystery = new Mystery();
 
@@ -8,7 +8,7 @@ const mystery = new Mystery();
   let guess;
 
   do {
-    guess = await prompt.askUserToGuessAMystery();
+    guess = await prompter.askForMystery();
   } while(mystery.guess(guess.suspect, guess.weapon, guess.room) !== -1);
 
   return ;

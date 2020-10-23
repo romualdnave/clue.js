@@ -11,17 +11,13 @@ export class Mystery {
     const mystery: string[] = Object.values(this.mystery);
     let score: number = 0;
 
-    if (mystery.includes(suspect.trim())) {
-      score++;
-    }
-    if (mystery.includes(weapon.trim())) {
-      score++;
-    }
-    if (mystery.includes(room.trim())) {
-      score++;
-    }
+    [suspect, weapon, room].forEach((arg: string) => {
+      if (mystery.includes(arg)) {
+        score++;
+      }
+    });
+
     if (score === 3) {
-      console.log(`Congratulations ! You solved the mystery !`);
       return -1;
     } else {
       console.log(`You guessed ${score} pieces of the mystery...`);
