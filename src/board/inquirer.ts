@@ -7,8 +7,9 @@ export const prompt = {
     const questions = [
       {
         name: 'suspect',
-        type: 'input',
+        type: 'list',
         message: `Who would you suspect among ${suspects} ?`,
+        choices: suspects,
         validate: (value: string) => {
           if (value.length) {
             return true;
@@ -19,8 +20,9 @@ export const prompt = {
       },
       {
         name: 'weapon',
-        type: 'input',
+        type: 'list',
         message: `What weapon would've used your suspect among ${weapons} ?`,
+        choices: weapons,
         validate: (value: string) => {
           if (value.length) {
             return true;
@@ -31,8 +33,9 @@ export const prompt = {
       },
       {
         name: 'room',
-        type: 'input',
+        type: 'list',
         message: `In which room among ${rooms} ?`,
+        choices: rooms,
         validate: (value: string) => {
           if (value.length) {
             return true;
